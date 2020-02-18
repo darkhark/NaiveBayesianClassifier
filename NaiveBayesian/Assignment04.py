@@ -15,6 +15,11 @@ correctTest = [1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0]
 
 trainDF = pd.DataFrame(data=train)
 testDF = pd.DataFrame(data=test)
+
+"""
+Here, CategoricalNB was used because each value is a categorical data type. 
+https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.CategoricalNB.html#sklearn.naive_bayes.CategoricalNB
+"""
 cnb = CategoricalNB()
 
 x_Cat = trainDF.loc[:, trainDF.columns != 'Decision']
@@ -35,6 +40,10 @@ print('\tAccuracy Score: ', ascore)
 print("Predicted Game Outcomes:\n\t" + str(predictedCatValues))
 print("\t" + str(correctTest))
 print("Actual outcomes ^\n")
+
+"""
+Gaussian was also used as it appears to be the standard Naive Bayes ran
+"""
 
 gnb = GaussianNB()
 
